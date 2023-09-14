@@ -30,6 +30,8 @@ variable "tags" {
   }
 }
 
-terraform {
-  required_version = ">= 0.12"
+variable "kms_key" {
+  type        = string
+  description = "The KMS key used for encryption. If this property is not specified, the AWS managed KMS key (aws/alias/sns) is used for encryption by default."
+  default = ""
 }
